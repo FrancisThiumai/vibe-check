@@ -19,7 +19,8 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="min-h-screen bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400 font-[Inter]">
+      <body className="min-h-screen bg-gradient-to-br from-violet-500 via-fuchsia-500 to-amber-400 animate-gradient-slow font-[Inter] overflow-x-hidden">
+        <div className="fixed inset-0 bg-[url('/noise.png')] opacity-[0.02] pointer-events-none"></div>
         {children}
       </body>
     </html>
