@@ -4,6 +4,7 @@ import { useSearchParams } from 'next/navigation'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { ShareIcon, ArrowPathIcon } from '@heroicons/react/24/solid'
+import { Suspense } from 'react'
 
 const getVibeDescription = (score: number) => {
   if (score >= 9) return { emoji: '✨', text: 'Absolutely Radiant', description: 'Your vibe is off the charts! You\'re basically a walking ray of sunshine right now.' }
@@ -13,10 +14,10 @@ const getVibeDescription = (score: number) => {
   return { emoji: '🫂', text: 'Low Key', description: 'Everyone has these days. Tomorrow is a new opportunity to reset your vibe.' }
 }
 
-export default function ResultsPage() {
+function ResultsContent() {
   const searchParams = useSearchParams()
-  const score = Number(searchParams.get('score')) || 5
-  const vibe = getVibeDescription(score)
+  const score = searchParams.get('score') || '0'
+  const vibe = getVibeDescription(Number(score))
 
   const handleShare = async () => {
     const shareText = `My current vibe check: ${vibe.emoji} ${vibe.text} (${score}/10) - Take yours at vibecheck.app!`
@@ -83,5 +84,17 @@ export default function ResultsPage() {
         </div>
       </motion.div>
     </main>
+  )
+}
+
+export default function Results() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-gradient-to-br from-purple-600 to-blue-500 flex items-center justify-center">
+        <div className="text-white text-2xl">Loading your vibe score...</div>
+      </div>
+    }>
+      <ResultsContent />
+    </Suspense>
   )
 } 
