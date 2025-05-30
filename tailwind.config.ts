@@ -10,6 +10,9 @@ const config: Config = {
     extend: {
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
+        righteous: ['Righteous', 'cursive'],
+        quicksand: ['Quicksand', 'sans-serif'],
+        poppins: ['Poppins', 'sans-serif']
       },
       animation: {
         'gradient-slow': 'gradient 15s ease infinite',

@@ -54,17 +54,17 @@ function ResultsContent() {
             initial={{ scale: 0.5 }}
             animate={{ scale: 1 }}
             transition={{ type: "spring", stiffness: 200 }}
-            className="text-5xl sm:text-6xl mb-4"
+            className="text-6xl sm:text-7xl mb-4"
           >
             {vibe.emoji}
           </motion.div>
-          <h1 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-violet-600 via-fuchsia-600 to-amber-600 bg-clip-text text-transparent">
+          <h1 className="text-3xl sm:text-4xl font-bold font-righteous bg-gradient-to-r from-violet-600 via-fuchsia-600 to-amber-600 bg-clip-text text-transparent drop-shadow-lg">
             {vibe.text}
           </h1>
-          <div className="text-xl sm:text-2xl font-bold">
+          <div className="text-xl sm:text-2xl font-bold font-quicksand text-gray-800">
             Score: {score}/10
           </div>
-          <p className="text-gray-600 text-base sm:text-lg">
+          <p className="text-gray-800 text-base sm:text-lg font-poppins leading-relaxed">
             {vibe.description}
           </p>
         </div>
@@ -74,9 +74,9 @@ function ResultsContent() {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             onClick={handleShare}
-            className="flex items-center justify-center space-x-2 bg-gradient-to-r from-violet-600 via-fuchsia-600 to-amber-500 text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl font-medium shadow-lg hover:shadow-xl transition-all duration-200 text-sm sm:text-base"
+            className="flex items-center justify-center space-x-2 bg-gradient-to-r from-violet-600 via-fuchsia-600 to-amber-500 text-white px-6 py-3 rounded-xl font-medium shadow-lg hover:shadow-xl transition-all duration-200 text-base font-poppins"
           >
-            <ShareIcon className="w-4 h-4 sm:w-5 sm:h-5" />
+            <ShareIcon className="w-5 h-5" />
             <span>Share Your Vibe</span>
           </motion.button>
 
@@ -84,9 +84,9 @@ function ResultsContent() {
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="w-full flex items-center justify-center space-x-2 bg-white text-gray-800 border border-gray-200 px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl font-medium hover:border-purple-400 transition-colors text-sm sm:text-base"
+              className="w-full flex items-center justify-center space-x-2 bg-white text-gray-800 border-2 border-gray-200 px-6 py-3 rounded-xl font-medium hover:border-purple-400 transition-all text-base font-poppins hover:bg-purple-50"
             >
-              <ArrowPathIcon className="w-4 h-4 sm:w-5 sm:h-5" />
+              <ArrowPathIcon className="w-5 h-5" />
               <span>Check Again</span>
             </motion.button>
           </Link>

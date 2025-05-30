@@ -77,10 +77,10 @@ export default function QuizPage() {
           className="space-y-8"
         >
           <div className="text-center">
-            <h2 className="text-2xl font-bold text-gray-800 mb-2">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 font-righteous">
               {questions[currentQuestion].question}
             </h2>
-            <div className="text-sm text-gray-500">
+            <div className="text-sm font-medium text-gray-700 font-quicksand">
               Question {currentQuestion + 1} of {questions.length}
             </div>
           </div>
@@ -92,7 +92,7 @@ export default function QuizPage() {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => handleAnswer(option.score)}
-                className="w-full text-left p-4 rounded-lg bg-white shadow-sm border border-gray-200 hover:border-purple-400 transition-colors"
+                className="w-full text-left p-4 rounded-lg bg-white shadow-md border-2 border-gray-100 hover:border-purple-400 transition-all font-poppins text-gray-800 hover:bg-purple-50"
               >
                 {option.text}
               </motion.button>
